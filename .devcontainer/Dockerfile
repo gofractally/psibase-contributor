@@ -8,9 +8,9 @@ WORKDIR /root/psibase
 # Clone the specified github repo
 RUN git clone https://github.com/gofractally/psibase.git .
 
-# # Make the build folder
-RUN mkdir build
-RUN git submodule update --init --recursive
+# Make the build folder
+RUN mkdir build \
+    && git submodule update --init --recursive
 
 # Use bash shell
 ENV SHELL /bin/bash
