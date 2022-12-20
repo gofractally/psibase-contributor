@@ -1,25 +1,8 @@
 FROM ghcr.io/gofractally/psibase-ubuntu-2004-builder:latest
 
-# Install psibase
-WORKDIR /root
-RUN mkdir psibase
-WORKDIR /root/psibase
-
-# Clone the specified github repo
-RUN git clone https://github.com/gofractally/psibase.git .
-
-# Make the build folder
-RUN mkdir build \
-    && git submodule update --init --recursive
-
-# Use bash shell
+# Use bash shell, prettify terminal, git completion
 ENV SHELL /bin/bash
-
-# Need bash shell for ansi quotes
 SHELL ["/bin/bash", "-c"]
-
-# Some nice-to-haves when using git inside the container
-# (prettify terminal, git completion)
 RUN echo $'\n\
 parse_git_branch() {\n\
   git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \\(.*\\)/ (\\1)/"\n\
@@ -32,3 +15,9 @@ fi\n\
 alias ll="ls -alF"\n\
 alias ls="ls --color=auto"\n\
 ' >> /root/.bashrc
+
+# Install psibase
+RUN mkdir /root/psibase
+WORKDIR /root/psibase
+RUN git clone https://github.com/gofractally/psibase.git . && \
+    git submodule update --init --recursive
