@@ -34,13 +34,16 @@ RUN mkdir -p /var/lib/prometheus    \
     && chown -R prome:prome /etc/prometheus/console_libraries
 
 # Tools (websocat & grok) to help export data to prometheus
+
+ARG WSC_VERSION=websocat.x86_64-unknown-linux-musl
+
 RUN cd /root \
  && wget https://github.com/fstab/grok_exporter/releases/download/v1.0.0.RC5/grok_exporter-1.0.0.RC5.linux-amd64.zip \
  && unzip grok_exporter-*.zip \
  && rm grok_exporter-*.zip \
  && ln -s /root/grok_exporter-1.0.0.RC5.linux-amd64/grok_exporter /usr/local/bin/grok_exporter \
- && wget https://github.com/vi/websocat/releases/download/v1.11.0/websocat.aarch64-unknown-linux-musl \
- && mv websocat.aarch64-unknown-linux-musl /usr/local/bin/websocat \
+ && wget https://github.com/vi/websocat/releases/download/v1.11.0/${WSC_VERSION} \
+ && mv ${WSC_VERSION} /usr/local/bin/websocat \
  && chmod a+x /usr/local/bin/websocat
 
 
