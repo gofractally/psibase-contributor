@@ -110,7 +110,6 @@ RUN chmod -R 0700 /usr/local/bin/
 
 # Add configuration files
 RUN mkdir -p $PSINODE_PATH/psinode_db
-ADD psinode/configs $PSINODE_PATH/
 COPY psinode/configs/$DEFAULT_PSINODE_CONFIG $PSINODE_PATH/psinode_db/config
 ADD grok_exporter/patterns /etc/grok_exporter/
 COPY grok_exporter/grok-exporter.yml /root/grok-exporter.yml
@@ -123,3 +122,6 @@ RUN chmod 644 /usr/share/grafana/conf/provisioning/datasources/psinode-datasourc
     chown -R grafana:grafana /usr/share/grafana/conf/provisioning/dashboards/psinode-dashboard.yaml
 ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana-psinode.ini /etc/grafana/grafana-psinode.ini
+
+# Update path
+ENV PATH=/root/psibase/build/psidk/bin:$PATH

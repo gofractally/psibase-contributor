@@ -19,6 +19,12 @@ This tool is primarily for the developers on the Fractally team, or other develo
 3. Execute the VSCode command to relaunch this repository inside a Docker container <br/> ![Reopen in Container](/img/build-command.png)
 4. Run a full build by clicking the corresponding button in the blue status bar at the bottom of the window in VSCode <br/> ![Execute Build](/img/full-build.png)
 
+## Note on HTTPS
+
+Running psinode using a database with the name "psinode_db" within the container will use the default psinode config file located at `psinode/configs/dev.config`. This is configured to automatically run psinode locally over https. Http is exposed within the container at port 8079, but the 8080 exposed outside the container is https.
+
+Make sure to install the root cert located in this repo at `local-certs/rootCA.pem` (`local-certs/rootCA.pem.crt` for Windows users) to ensure your browser doesn't complain when accessing psinode over https.
+
 ## Workflow loop
 
 In general, your workflow will be to open this psibase contributor repo, relaunch it inside a container, do all develoment activities, commit/push from within the VSCode-integrated bash terminal, close VSCode when finished (this closes the container. All work is saved unless you delete the docker volume).
