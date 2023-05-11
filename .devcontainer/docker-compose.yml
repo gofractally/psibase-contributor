@@ -19,8 +19,6 @@ services:
   mkcert:
     image: vishnunair/docker-mkcert:latest
     container_name: mkcert
-    environment:
-      - domain=psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io'
     command: ["/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts"]
     volumes:
       - type: bind
