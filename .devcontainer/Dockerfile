@@ -4,12 +4,13 @@ FROM ghcr.io/gofractally/psibase-ubuntu-2004-builder:latest as stage1
 RUN export DEBIAN_FRONTEND=noninteractive   \
     && apt-get update                       \
     && apt-get install -yq                  \
+        apt-transport-https                 \
+        curl                                \
+        gdb                                 \
+        gnupg2                              \
+        unzip                               \
         wget                                \
         xz-utils                            \
-        unzip                               \
-        gnupg2                              \
-        curl                                \
-        apt-transport-https                 \
     && apt-get clean -yq                    \
     && rm -rf /var/lib/apt/lists/*
 
@@ -115,6 +116,8 @@ RUN chmod 644 /usr/share/grafana/conf/provisioning/datasources/psinode-datasourc
     chown -R grafana:grafana /usr/share/grafana/conf/provisioning/dashboards/psinode-dashboard.yaml
 ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana-psinode.ini /etc/grafana/grafana-psinode.ini
+
+COPY gdb/.gdbinit /root/.gdbinit
 
 # Update path
 ENV PATH=/root/psibase/build/psidk/bin:$PATH
