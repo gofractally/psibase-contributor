@@ -1,14 +1,11 @@
 {
     "name": "${localWorkspaceFolderBasename}",
-    "build": {
-        "dockerfile": "./Dockerfile"
-    },
-    "postCreateCommand": "cp .vscode/c_cpp_properties.json.sample .vscode/c_cpp_properties.json && cp .vscode/tasks.json.sample .vscode/tasks.json",
-    "workspaceMount": "source=${localWorkspaceFolderBasename},target=/root/psibase,type=volume",
+
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "psibase",
     "workspaceFolder": "/root/psibase",
-    "mounts": ["type=bind,src=${localWorkspaceFolder}/artifacts,dst=/root/psibase/rust/psibase/boot-image"],
-    "runArgs": ["--name=${localWorkspaceFolderBasename}"],
-    "remoteEnv": { "PATH": "/root/psibase/build/psidk/bin:${containerEnv:PATH}" },
+
+    "postCreateCommand": "cp .vscode/c_cpp_properties.json.sample .vscode/c_cpp_properties.json && cp .vscode/tasks.json.sample .vscode/tasks.json",
     "customizations": {
         "vscode": {
             "extensions": [

@@ -1,0 +1,37 @@
+version: '3'
+services:
+  psibase:
+    build: .
+    container_name: psibase-contributor
+    ports:
+      - 8080:8080
+    environment:
+      - VITE_SECURE_LOCAL_DEV=true
+      - VITE_SECURE_PATH_TO_CERTS=/root/certs/
+    volumes:
+      - type: volume
+        source: psibase-contributor
+        target: /root/psibase
+      - type: bind
+        source: ../artifacts
+        target: /root/psibase/rust/psibase/boot-image
+      - type: bind
+        source: ../local-certs
+        target: /root/certs
+    command: sleep infinity
+  mkcert:
+    image: vishnunair/docker-mkcert:latest
+    container_name: mkcert
+    command: ["/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts"]
+    volumes:
+      - type: bind
+        source: ../local-certs
+        target: /root/.local/share/mkcert
+
+
+volumes:
+  psibase-contributor:
+
+
+# Original from gh
+#command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"
