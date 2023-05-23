@@ -117,7 +117,5 @@ RUN chmod 644 /usr/share/grafana/conf/provisioning/datasources/psinode-datasourc
 ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana-psinode.ini /etc/grafana/grafana-psinode.ini
 
-COPY gdb/.gdbinit /root/.gdbinit
-
 # Update path
 ENV PATH=/root/psibase/build/psidk/bin:$PATH
