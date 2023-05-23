@@ -12,6 +12,9 @@ services:
       - type: volume
         source: psibase-contributor
         target: /root/psibase
+      - type: volume
+        source: psibase-contr-worktrees
+        target: /root/psibase.worktrees
       - type: bind
         source: ../artifacts
         target: /root/psibase/rust/psibase/boot-image
@@ -31,6 +34,7 @@ services:
 
 volumes:
   psibase-contributor:
+  psibase-contr-worktrees:
 
 
 # Original from gh
