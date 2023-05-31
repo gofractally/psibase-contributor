@@ -5,7 +5,7 @@
     "service": "psibase",
     "workspaceFolder": "/root/psibase",
 
-    "postCreateCommand": "cp .vscode/c_cpp_properties.json.sample .vscode/c_cpp_properties.json && cp .vscode/tasks.json.sample .vscode/tasks.json",
+    "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done",
     "customizations": {
         "vscode": {
             "extensions": [
