@@ -8,6 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive   \
         curl                                \
         gdb                                 \
         gnupg2                              \
+        iproute2                            \
         unzip                               \
         wget                                \
         xz-utils                            \
@@ -77,6 +78,7 @@ fi\n\
  \n\
 alias ll="ls -alF"\n\
 alias ls="ls --color=auto"\n\
+export GATEWAY_IP=$(ip route | awk "/default/ { print \$3 }") \
 ' >> /root/.bashrc
 
 # Install psibase
