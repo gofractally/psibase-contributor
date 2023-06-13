@@ -48,5 +48,17 @@ The environment in the container set up for you by this tool has many helpful fe
 2. CMake file language support (Cmake)
 3. Showing custom build buttons in the status bar (Command Variable, and Tasks)
 4. Checking git history, blames, diffs, commit IDs, branch diagrams, etc. (GitLens, Open in Github)
-5. Creating real-time collaboration sessions with others on code within your container (Live Share Extension Pack)
-6. Previewing markdown files, with Mermaid diagram support (Markdown Preview Mermaid Support)
+5. Previewing markdown files, with Mermaid diagram support (Markdown Preview Mermaid Support)
+
+## Windows troubleshooting
+
+If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. The solution is simply to:
+1. Shut down docker desktop
+2. Run `wsl --shutdown` from a command prompt
+3. Create a `.wslconfig` file in `%userprofile%` if it doesn't exist
+4. Add the following config to the `.wslconfig` file
+```
+[wsl2]
+memory=6GB
+```
+5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximuim of 6GB, which should be enough.

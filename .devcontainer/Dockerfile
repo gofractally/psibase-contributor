@@ -1,4 +1,4 @@
-FROM ghcr.io/gofractally/psibase-ubuntu-2004-builder:latest as stage1
+FROM ghcr.io/gofractally/psibase-builder-ubuntu-2004:b70111acc20bdc6990e756a855fdbf428112c059 as stage1
 
 # Install deps
 RUN export DEBIAN_FRONTEND=noninteractive   \
