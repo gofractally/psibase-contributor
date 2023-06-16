@@ -78,7 +78,7 @@ fi\n\
  \n\
 alias ll="ls -alF"\n\
 alias ls="ls --color=auto"\n\
-export GATEWAY_IP=$(ip route | awk "/default/ { print \$3 }") \
+export HOST_IP=$(ip route | awk "/default/ { print \$3 }") \
 ' >> /root/.bashrc
 
 # Install psibase
