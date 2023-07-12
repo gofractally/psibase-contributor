@@ -1,8 +1,8 @@
 {
-    "name": "${localWorkspaceFolderBasename}",
+    "name": "psibase-contributor-test",
 
     "dockerComposeFile": ["docker-compose.yml"],
-    "service": "psibase",
+    "service": "psibase-test",
     "workspaceFolder": "/root/psibase",
 
     "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done",

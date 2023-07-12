@@ -1,8 +1,8 @@
 version: '3'
 services:
-  psibase:
+  psibase-test:
     build: .
-    container_name: psibase-contributor
+    container_name: psibase-contributor-test
     ports:
       - 8080:8080
     environment:
@@ -10,7 +10,7 @@ services:
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
     volumes:
       - type: volume
-        source: psibase-contributor
+        source: psibase-contributor-test
         target: /root/psibase
       - type: bind
         source: ../artifacts
@@ -19,18 +19,10 @@ services:
         source: ../local-certs
         target: /root/certs
     command: sleep infinity
-  mkcert:
-    image: vishnunair/docker-mkcert:latest
-    container_name: mkcert
-    command: ["/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts"]
-    volumes:
-      - type: bind
-        source: ../local-certs
-        target: /root/.local/share/mkcert
 
 
 volumes:
-  psibase-contributor:
+  psibase-contributor-test:
 
 
 # Original from gh
