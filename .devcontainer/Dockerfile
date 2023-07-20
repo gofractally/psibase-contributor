@@ -114,7 +114,6 @@ RUN mkdir -p $PSINODE_PATH/psinode_db
 COPY psinode/configs/$DEFAULT_PSINODE_CONFIG $PSINODE_PATH/psinode_db/config
 ADD grok_exporter/patterns /etc/grok_exporter/
 COPY grok_exporter/grok-exporter.yml /root/grok-exporter.yml
-
 COPY grafana/psinode-datasources.yaml /usr/share/grafana/conf/provisioning/datasources/psinode-datasources.yaml
 COPY grafana/psinode-dashboard.yaml /usr/share/grafana/conf/provisioning/dashboards/psinode-dashboard.yaml
 RUN chmod 644 /usr/share/grafana/conf/provisioning/datasources/psinode-datasources.yaml && \
@@ -124,5 +123,7 @@ RUN chmod 644 /usr/share/grafana/conf/provisioning/datasources/psinode-datasourc
 ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana-psinode.ini /etc/grafana/grafana-psinode.ini
 
-# Update path
+# Update environment vars
 ENV PATH=/root/psibase/build/psidk/bin:$PATH
+ENV VITE_SECURE_LOCAL_DEV=true
+ENV VITE_SECURE_PATH_TO_CERTS=/root/certs/

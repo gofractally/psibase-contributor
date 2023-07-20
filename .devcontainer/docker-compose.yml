@@ -5,9 +5,6 @@ services:
     container_name: psibase-contributor-test
     ports:
       - 8080:8080
-    environment:
-      - VITE_SECURE_LOCAL_DEV=true
-      - VITE_SECURE_PATH_TO_CERTS=/root/certs/
     volumes:
       - type: volume
         source: psibase-contributor-test
