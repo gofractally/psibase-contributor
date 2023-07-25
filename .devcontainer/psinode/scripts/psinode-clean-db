@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rm -rf $PSINODE_DB_PATH/$PSINODE_DB
