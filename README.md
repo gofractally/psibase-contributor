@@ -63,4 +63,4 @@ The solution is simply to:
 [wsl2]
 memory=8GB
 ```
-5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. It is possible to use only 6GB, but 8-10 GB is recommended and has better performance.
+5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. If you encounter any hang-ups or freezes when building, try bumping the memory limit higher.
