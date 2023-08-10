@@ -1,8 +1,8 @@
 version: '3'
 services:
   psibase:
-    image: ghcr.io/gofractally/psibase-contributor:latest
-    container_name: psibase-contributor
+    image: psibase-contributor-test
+    container_name: psibase-contributor-test
     ports:
       - 8080:8080
     environment:
@@ -10,7 +10,7 @@ services:
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
     volumes:
       - type: volume
-        source: psibase-contributor
+        source: psibase-contributor-test
         target: /root/psibase
       - type: bind
         source: ../artifacts
@@ -30,7 +30,7 @@ services:
 
 
 volumes:
-  psibase-contributor:
+  psibase-contributor-test:
 
 
 # Original from gh
