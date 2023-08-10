@@ -21,7 +21,7 @@ This tool is primarily for the developers on the Fractally team, or other develo
 
 ## Note on HTTPS
 
-Running psinode using a database with the name "psinode_db" within the container will use the default psinode config file located in your dev environment at `$PSINODE_PATH/psinode_db/http.config`. This is configured to automatically run psinode locally over https. Http is exposed within the container at port 8079, but the 8080 exposed outside the container is https.
+Running psinode using a database with the name "psinode_db" within the container will use a psinode config file located in your dev environment at `$PSINODE_PATH/psinode_db/config`. This is configured to automatically run psinode locally over https. Http is exposed within the container at port 8079, but the 8080 exposed outside the container is https.
 
 Make sure to install the root cert located in this repo at `local-certs/rootCA.pem` (`local-certs/rootCA.pem.crt` for Windows users) to ensure your browser doesn't complain when accessing psinode over https. The certificate is generated after the container is built for the first time.
 
