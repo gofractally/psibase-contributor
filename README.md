@@ -61,6 +61,6 @@ The solution is simply to:
 4. Add the following config to the `.wslconfig` file
 ```
 [wsl2]
-memory=6GB
+memory=8GB
 ```
-5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximuim of 6GB, which should be enough.
+5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. It is possible to use only 6GB, but 8-10 GB is recommended and has better performance.
