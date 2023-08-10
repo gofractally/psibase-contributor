@@ -17,21 +17,21 @@ This tool is primarily for the developers on the Fractally team, or other develo
 1. Clone this psibase-contributor repo to your development PC.
 2. Open this repo in vscode
 3. Execute the VSCode command to relaunch this repository inside a Docker container <br/> ![Reopen in Container](/img/build-command.png)
-4. Run a full build by clicking the corresponding button in the blue status bar at the bottom of the window in VSCode <br/> ![Execute Build](/img/full-build.png)
+4. Run a full build by clicking the corresponding button in the status bar at the bottom of the window in VSCode <br/> ![Execute Build](/img/full-build.png)
 
 ## Note on HTTPS
 
-Running psinode using a database with the name "psinode_db" within the container will use the default psinode config file located at `psinode/configs/dev.config`. This is configured to automatically run psinode locally over https. Http is exposed within the container at port 8079, but the 8080 exposed outside the container is https.
+Running psinode using a database with the name "psinode_db" within the container will use a psinode config file located in your dev environment at `$PSINODE_PATH/psinode_db/config`. This is configured to automatically run psinode locally over https. Http is exposed within the container at port 8079, but the 8080 exposed outside the container is https.
 
-Make sure to install the root cert located in this repo at `local-certs/rootCA.pem` (`local-certs/rootCA.pem.crt` for Windows users) to ensure your browser doesn't complain when accessing psinode over https.
+Make sure to install the root cert located in this repo at `local-certs/rootCA.pem` (`local-certs/rootCA.pem.crt` for Windows users) to ensure your browser doesn't complain when accessing psinode over https. The certificate is generated after the container is built for the first time.
 
 ## Workflow loop
 
-In general, your workflow will be to open this psibase contributor repo, relaunch it inside a container, do all develoment activities, commit/push from within the VSCode-integrated bash terminal, close VSCode when finished (this closes the container. All work is saved unless you delete the docker volume).
+In general, your workflow will be to open this psibase contributor repo, relaunch it inside a container, do all develoment activities, commit/push from within the VSCode-integrated bash terminal, close VSCode when finished (this closes the container. All work is saved unless you delete the corresponding docker volume).
 
 ## Data and build artifact access
 
-All source code and build files are stored within a named docker volume and are only accessible from within the container, with one exception: A bind-mount has been added to allow all bundled UIs and compiled wasms (Release version) for system and user services to be accessible from outside the container. These artifacts can be found here on the host machine in the `./artifacts` directory.
+All source code and build files are stored within a named docker volume and are only accessible from within the container. A bind-mount has been added to allow all bundled UIs and compiled wasms (Release version) for system and user services to be accessible from outside the container. These artifacts can be found on your host machine in this repo in the `./artifacts` directory.
 
 ## Updating
 
@@ -52,13 +52,15 @@ The environment in the container set up for you by this tool has many helpful fe
 
 ## Windows troubleshooting
 
-If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. The solution is simply to:
+If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. This is [a known issue](https://github.com/microsoft/WSL/issues/8725) with Docker Desktop with WSL2 on Windows.
+
+The solution is simply to:
 1. Shut down docker desktop
 2. Run `wsl --shutdown` from a command prompt
 3. Create a `.wslconfig` file in `%userprofile%` if it doesn't exist
 4. Add the following config to the `.wslconfig` file
 ```
 [wsl2]
-memory=6GB
+memory=8GB
 ```
-5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximuim of 6GB, which should be enough.
+5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. If you encounter any hang-ups or freezes when building, try bumping the memory limit higher.
