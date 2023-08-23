@@ -21,7 +21,7 @@ services:
     command: sleep infinity
   mkcert:
     image: vishnunair/docker-mkcert:latest
-    container_name: mkcert
+    container_name: mkcert-test
     command: ["/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts"]
     volumes:
       - type: bind
