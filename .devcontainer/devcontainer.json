@@ -9,20 +9,33 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                // build
                 "actboy168.tasks",
-                "bierner.markdown-mermaid",
-                "eamodio.gitlens",
-                "ms-vscode.cpptools",
-                "ms-vsliveshare.vsliveshare",
-                "ritwickdey.LiveServer",
                 "rioj7.command-variable",
-                "tdennis4496.cmantic",
                 "twxs.cmake",
-                "xaver.clang-format",
-                "ziyasal.vscode-open-in-github",
+
+                // web
+                "bradlc.vscode-tailwindcss",
                 "dbaeumer.vscode-eslint",
                 "esbenp.prettier-vscode",
-                "bradlc.vscode-tailwindcss"
+
+                // cpp
+                "ms-vscode.cpptools",
+                "tdennis4496.cmantic",
+                "xaver.clang-format",
+
+                // rust
+                "serayuzgur.crates",
+                "tamasfe.even-better-toml",
+                "rust-lang.rust-analyzer",
+
+                // misc
+                "bierner.markdown-mermaid",
+                "eamodio.gitlens",
+                "github.vscode-github-actions",
+                "ms-vsliveshare.vsliveshare",
+                "ritwickdey.LiveServer",
+                "ziyasal.vscode-open-in-github"
             ]
         }
     }
