@@ -32,10 +32,7 @@
                 // misc
                 "bierner.markdown-mermaid",
                 "eamodio.gitlens",
-                "github.vscode-github-actions",
-                "ms-vsliveshare.vsliveshare",
-                "ritwickdey.LiveServer",
-                "ziyasal.vscode-open-in-github"
+                "github.vscode-github-actions"
             ]
         }
     }
