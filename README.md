@@ -35,10 +35,10 @@ All source code and build files are stored within a named docker volume and are 
 
 ## Updating
 
-Occasionally, updates are made to Psibase that require a change to the environment (New external tool/library, etc.). When this happens, the simplest update procedure is simply to open this repo locally (not in a container), and run the command `Rebuild Without Cache and Reopen in Container`:
+Occasionally, updates are made to the Psibase build environment (new external tool/library, etc.) that could cause your Psibase builds to start failing. In order to load the environment changes into your container here, close your connection to the remote development container, and run: `docker pull ghcr.io/gofractally/psibase-contributor:latest` to pull in the latest changes. Then run the command `Rebuild Without Cache and Reopen in Container`:
 ![Rebuild Without Cache](/img/rebuild-without-cache.png)
 
-And of course, if there is an update to this tool itself, you may run a standard git pull to update the tool.
+And of course, if there is an update to this tool itself, you may run a standard `git pull` to update the tool, followed by another `Rebuild Without Cache and Reopen in Container`.
 
 ## Features
 
