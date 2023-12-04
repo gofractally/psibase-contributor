@@ -16,6 +16,7 @@ This tool is primarily for the developers on the Fractally team, or other develo
 
 1. Clone this psibase-contributor repo to your development PC.
 2. Open this repo in vscode
+    1. If you are running on an arm device like Apple M1, switch branches in the repo from `main` to `arm-image`
 3. Execute the VSCode command to relaunch this repository inside a Docker container <br/> ![Reopen in Container](/img/build-command.png)
 4. Run a full build by clicking the corresponding button in the status bar at the bottom of the window in VSCode <br/> ![Execute Build](/img/full-build.png)
 
