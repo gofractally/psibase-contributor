@@ -28,6 +28,7 @@
                 "serayuzgur.crates",
                 "tamasfe.even-better-toml",
                 "rust-lang.rust-analyzer",
+                "vadimcn.vscode-lldb",
 
                 // misc
                 "bierner.markdown-mermaid",
