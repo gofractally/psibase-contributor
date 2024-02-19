@@ -30,6 +30,9 @@
                 "rust-lang.rust-analyzer",
                 "vadimcn.vscode-lldb",
 
+                // wasm
+                "bytecodealliance.wit-idl",
+
                 // misc
                 "bierner.markdown-mermaid",
                 "eamodio.gitlens",
