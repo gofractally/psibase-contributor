@@ -36,20 +36,15 @@ All source code and build files are stored within a named docker volume and are 
 
 ## Updating
 
-Occasionally, updates are made to the Psibase build environment (new external tool/library, etc.) that could cause your Psibase builds to start failing. In order to load the environment changes into your container here, close your connection to the remote development container, and run: `docker pull ghcr.io/gofractally/psibase-contributor:latest` to pull in the latest changes. Then run the command `Rebuild Without Cache and Reopen in Container`:
-![Rebuild Without Cache](/img/rebuild-without-cache.png)
-
-And of course, if there is an update to this tool itself, you may run a standard `git pull` to update the tool, followed by another `Rebuild Without Cache and Reopen in Container`.
+Occasionally, you should use `git pull` in your `psibase-contributor` directory in order to pull the latest changes to the build environment or external tooling. After updating `psibase-contributor`, you should run `Rebuild Without Cache and Reopen in Container` when relaunching your container in order to load the changes into your development environment.
 
 ## Features
 
 The environment in the container set up for you by this tool has many helpful features that simplify the development of Psibase services & applets. Regardless of what VSCode extensions you have locally installed, this development environment is opinionated and will install several VSCode extensions into the container for you. These extensions are for:
 
-1. C++ auto-formatting, refactoring tools, and intellisense (C-mantic, C/C++, Clang-format)
-2. CMake file language support (Cmake)
-3. Showing custom build buttons in the status bar (Command Variable, and Tasks)
-4. Checking git history, blames, diffs, commit IDs, branch diagrams, etc. (GitLens, Open in Github)
-5. Previewing markdown files, with Mermaid diagram support (Markdown Preview Mermaid Support)
+* Language support, auto-formatting, intellisense, refactoring tools (C++, Rust, Javascript, Typescript, Markdown)
+* Showing custom build buttons in the VSCode status bar
+* Version control tools: checking git history, blames, diffs, commit IDs, branch diagrams, etc.
 
 ## Windows troubleshooting
 
