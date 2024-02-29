@@ -13,9 +13,6 @@ services:
         source: psibase-contributor
         target: /root/psibase
       - type: bind
-        source: ../artifacts
-        target: /root/psibase/rust/psibase/boot-image
-      - type: bind
         source: ../local-certs
         target: /root/certs
     command: sleep infinity
