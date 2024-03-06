@@ -46,7 +46,9 @@ The environment in the container set up for you by this tool has many helpful fe
 * Showing custom build buttons in the VSCode status bar
 * Version control tools: checking git history, blames, diffs, commit IDs, branch diagrams, etc.
 
-## Windows troubleshooting
+## Troubleshooting
+
+### Windows memory consumption 
 
 If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. This is [a known issue](https://github.com/microsoft/WSL/issues/8725) with Docker Desktop with WSL2 on Windows.
 
@@ -60,3 +62,7 @@ The solution is simply to:
 memory=8GB
 ```
 5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. If you encounter any hang-ups or freezes when building, try bumping the memory limit higher.
+
+### Mac disk space issue
+
+There are max volume size limits in Docker Desktop for Mac configurable in the `Settings > Resources` tab. Building psibase from source requires a large amount of disk space for all the various artifacts that are produced, so if you have disk space problems, this is where you can go to bump up the volume size limits.
