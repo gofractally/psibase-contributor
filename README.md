@@ -30,9 +30,9 @@ Make sure to install the root cert located in this repo at `local-certs/rootCA.p
 
 In general, your workflow will be to open this psibase contributor repo, relaunch it inside a container, do all develoment activities, commit/push from within the VSCode-integrated bash terminal, close VSCode when finished (this closes the container. All work is saved unless you delete the corresponding docker volume).
 
-## Data and build artifact access
+## Development data location
 
-All source code and build files are stored within a named docker volume and are only accessible from within the container. A bind-mount has been added to allow all bundled UIs and compiled wasms (Release version) for system and user services to be accessible from outside the container. These artifacts can be found on your host machine in this repo in the `./artifacts` directory.
+All source code and build files are stored within a named docker volume. This data is accessible from within the container or alternatively through Docker Desktop.
 
 ## Updating
 
