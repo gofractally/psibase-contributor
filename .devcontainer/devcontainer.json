@@ -22,10 +22,10 @@
                 // cpp
                 "ms-vscode.cpptools",
                 "tdennis4496.cmantic",
-                "xaver.clang-format",
+                "seaube.clangformat",
 
                 // rust
-                "serayuzgur.crates",
+                "fill-labs.dependi",
                 "tamasfe.even-better-toml",
                 "rust-lang.rust-analyzer",
                 "vadimcn.vscode-lldb",
