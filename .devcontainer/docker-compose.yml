@@ -1,7 +1,7 @@
 version: '3'
 services:
   psibase:
-    image: ghcr.io/gofractally/psibase-contributor:ff7c41cd4da3f8950735bd525eef33ca442f5fa6
+    image: ghcr.io/gofractally/psibase-contributor:adc25a6b7437e9838ec78e274db2294afdb54424 
     container_name: psibase-contributor
     ports:
       - 8080:8080
