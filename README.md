@@ -47,20 +47,21 @@ The environment in the container set up for you by this tool has many helpful fe
 
 ## Troubleshooting
 
-### Windows memory consumption 
+### Windows memory/CPU consumption
 
-If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. This is [a known issue](https://github.com/microsoft/WSL/issues/8725) with Docker Desktop with WSL2 on Windows.
+If you're on Windows, using Docker Desktop with WSL2, it is likely that the WSL2 process will chew up an enormous amount of memory on your PC. This is [a known issue](https://github.com/microsoft/WSL/issues/8725) with Docker Desktop with WSL2 on Windows. Another related issue is the overconsumption of CPU during builds, especially if you are using multiple psibase-contributors or parallel builds.
 
 The solution is simply to:
 1. Shut down docker desktop
 2. Run `wsl --shutdown` from a command prompt
 3. Create a `.wslconfig` file in `%userprofile%` if it doesn't exist
-4. Add the following config to the `.wslconfig` file
+4. Add the following config to the `.wslconfig` file (Change the numbers to suitable limits depending on your host machine specs)
 ```
 [wsl2]
-memory=8GB
+memory=12GB
+processors=8
 ```
-5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 8GB. If you encounter any hang-ups or freezes when building, try bumping the memory limit higher.
+5. That's it. Save the file and restart Docker Desktop, and now WSL2 is limited to only consume a maximum of 12GB memory and may only use 8 CPU cores. If you encounter any hang-ups or freezes when building, try bumping the memory limit higher.
 
 ### Mac disk space issue
 
