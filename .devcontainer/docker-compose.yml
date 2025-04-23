@@ -5,6 +5,9 @@ services:
     ports:
       - 8080:8080
     container_name: psibase-contributor
+    env_file:
+      - path: .env
+        required: false
     environment:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
