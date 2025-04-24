@@ -2,9 +2,12 @@ version: '3'
 services:
   psibase:
     image: ghcr.io/gofractally/psibase-contributor:ecb9e2c0d622d8ee22a224e68b240ea852d4d60f
-    container_name: psibase-contributor
     ports:
       - 8080:8080
+    container_name: psibase-contributor
+    env_file:
+      - path: .env
+        required: false
     environment:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
@@ -21,16 +24,14 @@ services:
   mkcert:
     image: vishnunair/docker-mkcert:latest
     container_name: mkcert
-    command: ["/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts"]
+    command: [ "/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts" ]
     volumes:
       - type: bind
         source: ../local-certs
         target: /root/.local/share/mkcert
 
-
 volumes:
   psibase-contributor:
 
-
-# Original from gh
-#command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"
+    # Original from gh
+    #command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"

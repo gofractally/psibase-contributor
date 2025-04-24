@@ -5,6 +5,7 @@
     "service": "psibase",
     "workspaceFolder": "/root/psibase",
 
+    "initializeCommand": "bash .devcontainer/custom-env.sh",
     "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done",
     "customizations": {
         "vscode": {
