@@ -1,3 +1,7 @@
+# 0.5
+
+* [Lock cargo-component to v0.20.0 to avoid adapter issues on Apple Silicon](https://github.com/gofractally/image-builders/pull/60)
+
 # 0.4
 
 * [Remove old dashboard from images](https://github.com/gofractally/image-builders/pull/53)
