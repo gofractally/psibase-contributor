@@ -1,6 +1,5 @@
 # 0.5
 
-* [Upgrading yarn to Berry (4.9.1)](https://github.com/gofractally/image-builders/pull/60)
 * [Lock cargo-component to v0.20.0 to avoid adapter issues on Apple Silicon](https://github.com/gofractally/image-builders/pull/60)
 * [Fix default config dir](https://github.com/gofractally/image-builders/pull/58)
 * [Add cargo-generate](https://github.com/gofractally/image-builders/commit/54c67673de1b230a5087ad6cfd3eefcfe5160377)
