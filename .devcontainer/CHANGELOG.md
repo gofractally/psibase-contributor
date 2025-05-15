@@ -1,3 +1,8 @@
+# 0.6
+
+* [Downgrading yarn back to v1.22.22 (classic)](https://github.com/gofractally/image-builders/pull/64)
+* [Set HOST_IP environment variable correctly on Mac](https://github.com/gofractally/image-builders/pull/59)
+
 # 0.5
 
 * [Upgrading yarn to Berry (4.9.1)](https://github.com/gofractally/image-builders/pull/60)
