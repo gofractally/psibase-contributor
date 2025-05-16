@@ -1,3 +1,7 @@
+# 0.7
+
+* [Upgrading yarn to v4.9.1](https://github.com/gofractally/image-builders/pull/65)
+
 # 0.6
 
 * [Downgrading yarn back to v1.22.22 (classic)](https://github.com/gofractally/image-builders/pull/64)
