@@ -1,3 +1,8 @@
+# 0.7
+
+* [Upgrade yarn to v4 and downgrade cargo-component to 0.15.0](https://github.com/gofractally/image-builders/pull/65)
+* [Pin rust at v1.85](https://github.com/gofractally/image-builders/pull/66)
+
 # 0.6
 
 * [Downgrading yarn back to v1.22.22 (classic)](https://github.com/gofractally/image-builders/pull/64)
