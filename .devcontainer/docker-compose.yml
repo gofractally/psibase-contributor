@@ -12,7 +12,7 @@ services:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.7
+      - PSIBASE_CONTRIBUTOR_VERSION=0.8
     volumes:
       - type: volume
         source: psibase-contributor
