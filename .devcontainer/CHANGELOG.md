@@ -1,3 +1,7 @@
+# 0.8
+
+* [added ZipFS extension to restore VS Code DX](https://github.com/gofractally/psibase-contributor/pull/36/commits/0004449ceef6a560eb5cd24969ae1647d0ebf7e5)
+
 # 0.7
 
 * [Upgrade yarn to v4 and downgrade cargo-component to 0.15.0](https://github.com/gofractally/image-builders/pull/65)
