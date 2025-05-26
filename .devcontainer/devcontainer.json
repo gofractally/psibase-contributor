@@ -13,7 +13,6 @@
                 // build
                 "actboy168.tasks",
                 "rioj7.command-variable",
-                "twxs.cmake",
 
                 // web
                 "arcanis.vscode-zipfs",
