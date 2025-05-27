@@ -1,3 +1,7 @@
+# 0.9
+
+* [Switch rust-tools to 1.86.0 to support async-graphql@7.0.17](https://github.com/gofractally/image-builders/pull/69)
+
 # 0.8
 
 * [added ZipFS extension to restore VS Code DX](https://github.com/gofractally/psibase-contributor/pull/36/commits/0004449ceef6a560eb5cd24969ae1647d0ebf7e5)
