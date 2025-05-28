@@ -1,6 +1,7 @@
 # 0.9
 
 * [Switch rust-tools to 1.86.0 to support async-graphql@7.0.17](https://github.com/gofractally/image-builders/pull/69)
+* [Remove deprecated twxs.cmake extension](https://github.com/gofractally/psibase-contributor/pull/37)
 
 # 0.8
 
