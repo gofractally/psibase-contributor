@@ -1,3 +1,7 @@
+# 0.10
+
+- Install [Yarn PnP editor SDKs for VSCode](https://yarnpkg.com/getting-started/editor-sdks) in devcontainer `postCreateCommand` to restore VSCode DX
+
 # 0.9
 
 * [Switch rust-tools to 1.86.0 to support async-graphql@7.0.17](https://github.com/gofractally/image-builders/pull/69)
