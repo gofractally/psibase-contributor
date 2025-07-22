@@ -21,7 +21,7 @@
                 "esbenp.prettier-vscode",
 
                 // cpp
-                "ms-vscode.cpptools",
+                "llvm-vs-code-extensions.vscode-clangd",
                 "tdennis4496.cmantic",
                 "seaube.clangformat",
 
