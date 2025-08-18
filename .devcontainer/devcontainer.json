@@ -6,7 +6,7 @@
     "workspaceFolder": "/root/psibase",
 
     "initializeCommand": "bash .devcontainer/custom-env.sh",
-    "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done && cd services && yarn && yarn dlx @yarnpkg/sdks vscode",
+    "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done && cd packages && yarn && yarn dlx @yarnpkg/sdks vscode",
     "customizations": {
         "vscode": {
             "extensions": [
