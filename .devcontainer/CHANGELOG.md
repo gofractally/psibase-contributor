@@ -1,3 +1,7 @@
+# 0.12
+
+- Update to the latest builder image
+
 # 0.11
 
 - Update install path for [Yarn PnP editor SDKs for VSCode](https://yarnpkg.com/getting-started/editor-sdks) in devcontainer `postCreateCommand` to restore VSCode DX after `services` directory was renamed to `packages`
