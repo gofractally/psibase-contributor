@@ -1,6 +1,10 @@
+# 0.13
+
+- [Updates to the latest builder image that adds zlib](https://github.com/gofractally/image-builders/pull/72)
+
 # 0.12
 
-- Update to the latest builder image
+- [Update to the latest builder image that adds softhsm2](https://github.com/gofractally/image-builders/pull/70)
 
 # 0.11
 
