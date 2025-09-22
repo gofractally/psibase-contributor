@@ -23,10 +23,11 @@ The environment in the container set up for you by this tool has many helpful fe
 # How to use
 
 1. Clone this psibase-contributor repo to your development PC.
-2. Open this repo in vscode
+2. Open this repo in VSCode
 3. Execute the VSCode command to relaunch this repository inside a Docker container <br/> ![Reopen in Container](/img/build-command.png)
-4. Open a terminal in vscode, and run `git pull` and `git submodule update --init --recursive` to ensure psibase is up-to-date.
-5. Run a full build by clicking the corresponding button in the status bar at the bottom of the window in VSCode <br/> ![Build](/img/full-build.png)
+4. After first launch, configure VSCode to use the workspace's TypeScript version by executing the "TypeScript: Select TypeScript Version..." command and selecting "Use Workspace Version". If the wrong TypeScript version is selected, TypeScript linting will not work. VSCode should remember this setting on subsequent launches.
+5. Open a terminal in VSCode, and run `git pull` and `git submodule update --init --recursive` to ensure psibase is up-to-date.
+6. Run a full build by clicking the corresponding button in the status bar at the bottom of the window in VSCode <br/> ![Build](/img/full-build.png)
 
 ## Note on HTTPS
 

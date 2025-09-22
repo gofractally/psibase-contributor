@@ -1,3 +1,24 @@
+# 0.13
+
+- [Updates to the latest builder image that adds zlib](https://github.com/gofractally/image-builders/pull/72)
+
+# 0.12
+
+- [Update to the latest builder image that adds softhsm2](https://github.com/gofractally/image-builders/pull/70)
+
+# 0.11
+
+- Update install path for [Yarn PnP editor SDKs for VSCode](https://yarnpkg.com/getting-started/editor-sdks) in devcontainer `postCreateCommand` to restore VSCode DX after `services` directory was renamed to `packages`
+
+# 0.10
+
+- Install [Yarn PnP editor SDKs for VSCode](https://yarnpkg.com/getting-started/editor-sdks) in devcontainer `postCreateCommand` to restore VSCode DX
+
+# 0.9
+
+* [Switch rust-tools to 1.86.0 to support async-graphql@7.0.17](https://github.com/gofractally/image-builders/pull/69)
+* [Remove deprecated twxs.cmake extension](https://github.com/gofractally/psibase-contributor/pull/37)
+
 # 0.8
 
 * [added ZipFS extension to restore VS Code DX](https://github.com/gofractally/psibase-contributor/pull/36/commits/0004449ceef6a560eb5cd24969ae1647d0ebf7e5)
