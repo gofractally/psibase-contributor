@@ -23,7 +23,6 @@
                 // cpp
                 "llvm-vs-code-extensions.vscode-clangd",
                 "tdennis4496.cmantic",
-                "seaube.clangformat",
 
                 // rust
                 "fill-labs.dependi",
