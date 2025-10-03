@@ -1,3 +1,6 @@
+# 0.15
+- [Map a port range, rather than only 8080](https://github.com/gofractally/psibase-contributor/pull/39)
+
 # 0.14
 
 - [Adds clangd extension](https://github.com/gofractally/psibase-contributor/pull/38)

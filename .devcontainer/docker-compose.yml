@@ -2,7 +2,7 @@ services:
   psibase:
     image: ghcr.io/gofractally/psibase-contributor:073ffc7576039990f47c4389c1258b5033190d60
     ports:
-      - 8080:8080
+      - "8070-8090:8070-8090"
     container_name: psibase-contributor
     env_file:
       - path: .env
@@ -11,7 +11,7 @@ services:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.14
+      - PSIBASE_CONTRIBUTOR_VERSION=0.15
     volumes:
       - type: volume
         source: psibase-contributor
