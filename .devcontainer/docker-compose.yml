@@ -1,4 +1,3 @@
-version: '3'
 services:
   psibase:
     image: ghcr.io/gofractally/psibase-contributor:073ffc7576039990f47c4389c1258b5033190d60
@@ -12,7 +11,7 @@ services:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.13
+      - PSIBASE_CONTRIBUTOR_VERSION=0.14
     volumes:
       - type: volume
         source: psibase-contributor
@@ -20,6 +19,9 @@ services:
       - type: bind
         source: ../local-certs
         target: /root/certs
+      - type: bind
+        source: ../scripts
+        target: /root/scripts
     command: sleep infinity
   mkcert:
     image: vishnunair/docker-mkcert:latest

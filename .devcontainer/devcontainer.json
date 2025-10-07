@@ -6,7 +6,7 @@
     "workspaceFolder": "/root/psibase",
 
     "initializeCommand": "bash .devcontainer/custom-env.sh",
-    "postCreateCommand": "for file in .vscode/*.sample; do cp \"$file\" \"${file%.sample}\"; done && cd packages && yarn && yarn dlx @yarnpkg/sdks vscode",
+    "postCreateCommand": "bash /root/scripts/post-create.sh",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -21,9 +21,8 @@
                 "esbenp.prettier-vscode",
 
                 // cpp
-                "ms-vscode.cpptools",
+                "llvm-vs-code-extensions.vscode-clangd",
                 "tdennis4496.cmantic",
-                "seaube.clangformat",
 
                 // rust
                 "fill-labs.dependi",

@@ -1,3 +1,7 @@
+# 0.14
+
+- [Adds clangd extension](https://github.com/gofractally/psibase-contributor/pull/38)
+
 # 0.13
 
 - [Updates to the latest builder image that adds zlib](https://github.com/gofractally/image-builders/pull/72)
