@@ -6,7 +6,7 @@
     "workspaceFolder": "/root/psibase",
 
     "initializeCommand": "bash .devcontainer/custom-env.sh",
-    "postCreateCommand": "bash /root/scripts/post-create.sh",
+    "postCreateCommand": "bash /root/psibase/.vscode/scripts/env-setup.sh",
     "customizations": {
         "vscode": {
             "extensions": [
