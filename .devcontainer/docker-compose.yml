@@ -19,9 +19,9 @@ services:
       - type: bind
         source: ../local-certs
         target: /root/certs
-      - type: bind
-        source: ../scripts
-        target: /root/scripts
+      - type: volume
+        source: psibase-contributor-cursor
+        target: /root/.cursor
     command: sleep infinity
   mkcert:
     image: vishnunair/docker-mkcert:latest
@@ -34,6 +34,7 @@ services:
 
 volumes:
   psibase-contributor:
+  psibase-contributor-cursor:
 
     # Original from gh
     #command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"
