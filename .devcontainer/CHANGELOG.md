@@ -1,3 +1,11 @@
+# 0.15
+- [Add clangd-18](https://github.com/gofractally/image-builders/pull/73)
+- [Update cargo-generate to latest: 0.23.5](https://github.com/gofractally/image-builders/pull/75)
+- [Adds direnv for dynamic PATH variable configuration](https://github.com/gofractally/image-builders/pull/74)
+- [Map a port range, rather than only 8080](https://github.com/gofractally/psibase-contributor/pull/48/commits/62989402ebe22182d1afec974759a960625b8408)
+- [Replace external post-create script with env-setup.sh script from within psibase](https://github.com/gofractally/psibase-contributor/pull/48/commits/8b678406be98c1e86a93c95144e1c5fd1657f36b)
+- [Add a volume to persist cursor metadata](https://github.com/gofractally/psibase-contributor/pull/48/commits/e3350515ad11a2beaa98eebede3207ccd48f6364)
+
 # 0.14
 
 - [Adds clangd extension](https://github.com/gofractally/psibase-contributor/pull/38)

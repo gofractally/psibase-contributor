@@ -1,8 +1,8 @@
 services:
   psibase:
-    image: ghcr.io/gofractally/psibase-contributor:073ffc7576039990f47c4389c1258b5033190d60
+    image: ghcr.io/gofractally/psibase-contributor:c38d79e2f477c34387ccd824c3e33797691eccb4
     ports:
-      - 8080:8080
+      - "8070-8090:8070-8090"
     container_name: psibase-contributor
     env_file:
       - path: .env
@@ -11,7 +11,7 @@ services:
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.14
+      - PSIBASE_CONTRIBUTOR_VERSION=0.15
     volumes:
       - type: volume
         source: psibase-contributor
@@ -19,9 +19,9 @@ services:
       - type: bind
         source: ../local-certs
         target: /root/certs
-      - type: bind
-        source: ../scripts
-        target: /root/scripts
+      - type: volume
+        source: psibase-contributor-cursor
+        target: /root/.cursor
     command: sleep infinity
   mkcert:
     image: vishnunair/docker-mkcert:latest
@@ -34,6 +34,7 @@ services:
 
 volumes:
   psibase-contributor:
+  psibase-contributor-cursor:
 
     # Original from gh
     #command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"
