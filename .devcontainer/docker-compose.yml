@@ -8,6 +8,7 @@ services:
       - path: .env
         required: false
     environment:
+      - AGENT_CONFIG_REPO_URL=
       - VITE_SECURE_LOCAL_DEV=true
       - VITE_SECURE_PATH_TO_CERTS=/root/certs/
       # Manually update this whenever changes are made
@@ -19,6 +20,10 @@ services:
       - type: bind
         source: ../local-certs
         target: /root/certs
+      - type: bind
+        source: ./init-agent-config.sh
+        target: /root/init-agent-config.sh
+        read_only: true
       - type: volume
         source: psibase-contributor-cursor
         target: /root/.cursor

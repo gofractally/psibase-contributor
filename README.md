@@ -47,6 +47,15 @@ Within the container, you should have some items in the toolbar to help you buil
 
 The first time you use psibase contributor (or after any time your docker volume gets deleted), you will have to configure 
 
+## Optional agent config repo
+
+If you want to reuse agent configurations from another repository:
+
+1. Edit `.devcontainer/docker-compose.yml` and set `AGENT_CONFIG_REPO_URL=https://github.com/owner/repo.git`. The specified repo should can contain `.cursor/`, `.claude/`, etc. configuration directories with rules/skills and other agent configurations.
+2. Restart or reopen the devcontainer. You do not need to rebuild for this feature.
+3. On container start, the repository will be cloned into `/root/agent-config` if not already present.
+4. Then you can symlink your agent config into the root of the `psibase` workspace (`/root/psibase`) or to wherever is needed for your workflow.
+
 # Development data location
 
 All source code and build files are stored within a named docker volume. This data is accessible from within the container or alternatively through Docker Desktop.

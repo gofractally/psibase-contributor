@@ -1,38 +1,33 @@
 {
     "name": "${localWorkspaceFolderBasename}",
-
-    "dockerComposeFile": ["docker-compose.yml"],
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
     "service": "psibase",
     "workspaceFolder": "/root/psibase",
-
     "initializeCommand": "bash .devcontainer/custom-env.sh",
-    "postCreateCommand": "bash /root/psibase/.vscode/scripts/env-setup.sh",
+    "postCreateCommand": "bash /root/init-agent-config.sh && bash /root/psibase/.vscode/scripts/env-setup.sh",
     "customizations": {
         "vscode": {
             "extensions": [
                 // build
                 "actboy168.tasks",
                 "rioj7.command-variable",
-
                 // web
                 "arcanis.vscode-zipfs",
                 "bradlc.vscode-tailwindcss",
                 "dbaeumer.vscode-eslint",
                 "esbenp.prettier-vscode",
-
                 // cpp
                 "llvm-vs-code-extensions.vscode-clangd",
                 "tdennis4496.cmantic",
-
                 // rust
                 "fill-labs.dependi",
                 "tamasfe.even-better-toml",
                 "rust-lang.rust-analyzer",
                 "vadimcn.vscode-lldb",
-
                 // wasm
                 "bytecodealliance.wit-idl",
-
                 // misc
                 "bierner.markdown-mermaid",
                 "eamodio.gitlens",
