@@ -1,3 +1,6 @@
+# 0.16
+- [Support an external agent-config repo](https://github.com/gofractally/psibase-contributor/pull/49)
+
 # 0.15
 - [Add clangd-18](https://github.com/gofractally/image-builders/pull/73)
 - [Update cargo-generate to latest: 0.23.5](https://github.com/gofractally/image-builders/pull/75)
