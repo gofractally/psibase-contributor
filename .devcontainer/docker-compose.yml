@@ -9,8 +9,7 @@ services:
         required: false
     environment:
       - AGENT_CONFIG_REPO_URL=
-      - VITE_SECURE_LOCAL_DEV=true
-      - VITE_SECURE_PATH_TO_CERTS=/root/certs/
+      - GH_TOKEN=
       # Manually update this whenever changes are made
       - PSIBASE_CONTRIBUTOR_VERSION=0.16
     volumes:
