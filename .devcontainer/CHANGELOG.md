@@ -1,3 +1,10 @@
+# 0.17
+- [Add GH CLI](https://github.com/gofractally/image-builders/pull/80)
+- [Add cursor agent CLI](https://github.com/gofractally/image-builders/pull/81)
+- [Environment variable cleanup](https://github.com/gofractally/psibase-contributor/pull/50)
+  - Removes deprecated `VITE` variables
+  - Adds `GH_TOKEN` for use with GH CLI
+
 # 0.16
 - [Support an external agent-config repo](https://github.com/gofractally/psibase-contributor/pull/49)
 
