@@ -29,14 +29,6 @@ The environment in the container set up for you by this tool has many helpful fe
 5. Open a terminal in VSCode, and run `git pull` and `git submodule update --init --recursive` to ensure psibase is up-to-date.
 6. Run a full build by clicking the corresponding button in the status bar at the bottom of the window in VSCode <br/> ![Build](/img/full-build.png)
 
-## Note on HTTPS
-
-To run locally using https, you must specify the appropriate TLS-related options. The psibase-contributor tool generates tls keys for you to use, and a sample config file using them can be found in the container at `/root/example-psinode-configs/https.config`.
-
-Make sure to install the root cert located in this repo at `local-certs/rootCA.pem` (`local-certs/rootCA.pem.crt` for Windows users) as a *Trusted Root Certificate Authority* to ensure your browser doesn't complain about invalid certs when accessing psinode over https. The certificate is generated after the container is built for the first time.
-
-The certificates are generated for `sslip.io` subdomains. You must ensure you specify the corresponding host (e.g. `https://psibase.127.0.0.1.sslip.io:8080`) when you launch psinode rather than the default (e.g. `http://psibase.localhost:8080`).
-
 ## Development workflow
 
 In general, your workflow will be to open this psibase contributor repo, relaunch it inside a container, do all develoment activities, commit/push from within the VSCode-integrated bash terminal, close VSCode when finished (this closes the container. All work is saved unless you delete the corresponding docker volume).

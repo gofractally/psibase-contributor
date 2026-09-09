@@ -1,3 +1,9 @@
+# 0.18
+
+- [Update node, npm and yarn versions](https://github.com/gofractally/image-builders/pull/87)
+- [Pin builder images to rust 1.98](https://github.com/gofractally/image-builders/pull/88)
+- [Remove mkcert service and sslip.io certs](https://github.com/gofractally/psibase-contributor/pull/52)
+
 # 0.17
 - [Add GH CLI](https://github.com/gofractally/image-builders/pull/80)
 - [Add cursor agent CLI](https://github.com/gofractally/image-builders/pull/81)

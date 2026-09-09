@@ -1,6 +1,6 @@
 services:
   psibase:
-    image: ghcr.io/gofractally/psibase-contributor:5cbe1ff43f23aa256c9e1df0320649adcd5b5d5f
+    image: ghcr.io/gofractally/psibase-contributor:983d7b62457785036f381163a2e50039f304e517
     ports:
       - "8070-8090:8070-8090"
     container_name: psibase-contributor
@@ -11,14 +11,11 @@ services:
       - AGENT_CONFIG_REPO_URL=
       - GH_TOKEN=
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.17
+      - PSIBASE_CONTRIBUTOR_VERSION=0.18
     volumes:
       - type: volume
         source: psibase-contributor
         target: /root/psibase
-      - type: bind
-        source: ../local-certs
-        target: /root/certs
       - type: bind
         source: ./init-agent-config.sh
         target: /root/init-agent-config.sh
@@ -27,18 +24,7 @@ services:
         source: psibase-contributor-cursor
         target: /root/.cursor
     command: sleep infinity
-  mkcert:
-    image: vishnunair/docker-mkcert:latest
-    container_name: mkcert
-    command: [ "/bin/sh", "-c", "mkcert -install && mkcert psibase.127.0.0.1.sslip.io '*.psibase.127.0.0.1.sslip.io' && cp /root/.local/share/mkcert/rootCA.pem /root/.local/share/mkcert/rootCA.pem.crt && tail -f -n0 /etc/hosts" ]
-    volumes:
-      - type: bind
-        source: ../local-certs
-        target: /root/.local/share/mkcert
 
 volumes:
   psibase-contributor:
   psibase-contributor-cursor:
-
-    # Original from gh
-    #command: "mkcert -install && for i in $(echo $domain | sed "s/,/ /g"); do mkcert $i; done && tail -f -n0 /etc/hosts"
