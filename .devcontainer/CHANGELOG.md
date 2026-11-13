@@ -1,3 +1,7 @@
+# 0.19
+
+- [Bump Node to v24.22.1 (Node2Shell, CVE-2026-111497)](https://github.com/gofractally/image-builders/pull/91)
+
 # 0.18
 
 - [Update node, npm and yarn versions](https://github.com/gofractally/image-builders/pull/87)

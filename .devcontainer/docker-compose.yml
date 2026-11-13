@@ -1,6 +1,6 @@
 services:
   psibase:
-    image: ghcr.io/gofractally/psibase-contributor:983d7b62457785036f381163a2e50039f304e517
+    image: ghcr.io/gofractally/psibase-contributor:a6d8868fe80fb0935858f542f9f8f86124dae3e1
     ports:
       - "8070-8090:8070-8090"
     container_name: psibase-contributor
@@ -11,7 +11,7 @@ services:
       - AGENT_CONFIG_REPO_URL=
       - GH_TOKEN=
       # Manually update this whenever changes are made
-      - PSIBASE_CONTRIBUTOR_VERSION=0.18
+      - PSIBASE_CONTRIBUTOR_VERSION=0.19
     volumes:
       - type: volume
         source: psibase-contributor
